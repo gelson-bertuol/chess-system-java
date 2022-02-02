@@ -22,36 +22,36 @@ public class King extends ChessPiece {
 		
 		Position  p = new Position(0, 0);
 		
-		//Above
-		p.setValues(position.getRow()-1, position.getColumn());
+		//North (N)
+		p.setValues(position.getRow() -1, position.getColumn());
 		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
 		
-		//Below
-		p.setValues(position.getRow()+1, position.getColumn());
-		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
-		
-		//Left
-		p.setValues(position.getRow(), position.getColumn()-1);
+		//Northeast (NE)
+		p.setValues(position.getRow() -1, position.getColumn() +1);
 		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
 
-		//Right
-		p.setValues(position.getRow(), position.getColumn()+1);
+		//East (E)
+		p.setValues(position.getRow(), position.getColumn() +1);
 		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
 
-		//Above-Right
-		p.setValues(position.getRow()-1, position.getColumn()+1);
-		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
-		
-		//Above-Left
-		p.setValues(position.getRow()-1, position.getColumn()-1);
-		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
-		
-		//Below-Right
-		p.setValues(position.getRow()+1, position.getColumn()+1);
+		//Southeast (SE)
+		p.setValues(position.getRow() +1, position.getColumn() +1);
 		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
 
-		//Below-Left
-		p.setValues(position.getRow()+1, position.getColumn()-1);
+		//South (S)
+		p.setValues(position.getRow() +1, position.getColumn());
+		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
+		
+		//Southwest (SW)
+		p.setValues(position.getRow() +1, position.getColumn() -1);
+		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
+
+		//West (W)
+		p.setValues(position.getRow(), position.getColumn() -1);
+		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
+		
+		//Northwest (NW)
+		p.setValues(position.getRow() -1, position.getColumn() -1);
 		if (canMove(p)) mat[p.getRow()][p.getColumn()] = true;
 		
 		return mat;

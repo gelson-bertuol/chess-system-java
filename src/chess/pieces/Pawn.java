@@ -23,12 +23,12 @@ public class Pawn extends ChessPiece {
 		
 		if (getColor() == Color.WHITE) {
 			//Move one position
-			p.setValues(position.getRow() - 1, position.getColumn());
+			p.setValues(position.getRow() -1, position.getColumn());
 			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			//Move two possitions at the first time
-			p.setValues(position.getRow() - 2, position.getColumn());
+			p.setValues(position.getRow() -2, position.getColumn());
 			Position p2 = new Position(position.getRow() - 1, position.getColumn());
 			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p) 
 					&& getBoard().positionExists(p2) && !getBoard().thereIsAPiece(p2)
@@ -36,36 +36,36 @@ public class Pawn extends ChessPiece {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			//Move to left diagonal to capture an opponent piece
-			p.setValues(position.getRow() - 1, position.getColumn() - 1);
+			p.setValues(position.getRow() -1, position.getColumn() -1);
 			if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			//Move to right diagonal to capture an opponent piece
-			p.setValues(position.getRow() - 1, position.getColumn() + 1);
+			p.setValues(position.getRow() -1, position.getColumn() +1);
 			if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 		} else {
 			//Move one position
-			p.setValues(position.getRow() + 1, position.getColumn());
+			p.setValues(position.getRow() +1, position.getColumn());
 			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			//Move two possitions at the first time
-			p.setValues(position.getRow() + 2, position.getColumn());
-			Position p2 = new Position(position.getRow() + 1, position.getColumn());
+			p.setValues(position.getRow() +2, position.getColumn());
+			Position p2 = new Position(position.getRow() +1, position.getColumn());
 			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p) 
 					&& getBoard().positionExists(p2) && !getBoard().thereIsAPiece(p2)
 					&& getMoveCount() == 0) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			//Move to left diagonal to capture an opponent piece
-			p.setValues(position.getRow() + 1, position.getColumn() - 1);
+			p.setValues(position.getRow() +1, position.getColumn() -1);
 			if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			//Move to right diagonal to capture an opponent piece
-			p.setValues(position.getRow() + 1, position.getColumn() + 1);
+			p.setValues(position.getRow() +1, position.getColumn() +1);
 			if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
